@@ -264,8 +264,14 @@ function initSmoothScroll() {
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
+                // Calculate maximum scrollable position
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+                // Use the smaller of desired position or max scroll to handle last sections
+                const finalPosition = Math.min(offsetPosition, maxScroll);
+
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: finalPosition,
                     behavior: 'smooth'
                 });
             }
