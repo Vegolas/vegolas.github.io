@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ślonski Gothic - Modyfikacja Gothic z pełnym dubbingiem śląskim</title>
+    <meta name="description" content="Unikalna modyfikacja gry Gothic z kompletnym tłumaczeniem i dubbingiem w języku śląskim.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Grain overlay for cinematic texture -->
+    <div class="grain-overlay"></div>
+
+    <!-- Particle canvas for atmospheric effects -->
+    <canvas id="particles"></canvas>
+
+    <!-- Audio control button -->
+    <button id="audio-toggle" class="audio-btn" title="Włącz/Wyłącz dźwięk">
+        <span class="audio-icon audio-off">♪</span>
+        <span class="audio-status">DŹWIĘK</span>
+    </button>
+    <audio id="ambient-audio" loop>
+        <source src="assets/ambient.mp3" type="audio/mpeg">
+        <source src="assets/ambient.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-chain nav-chain-left">
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+        </div>
+        <div class="nav-chain nav-chain-right">
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+        </div>
+        <div class="nav-glow"></div>
+        <div class="nav-frame">
+            <div class="nav-corner nav-corner-tl">
+                <span class="corner-rune">ᛟ</span>
+            </div>
+            <div class="nav-corner nav-corner-tr">
+                <span class="corner-rune">ᚱ</span>
+            </div>
+            <div class="nav-corner nav-corner-bl">
+                <span class="corner-rune">ᚹ</span>
+            </div>
+            <div class="nav-corner nav-corner-br">
+                <span class="corner-rune">ᛉ</span>
+            </div>
+            <div class="nav-border-ornament nav-border-top"></div>
+            <div class="nav-border-ornament nav-border-bottom"></div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">
+                    <span class="nav-link-text">Start</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#about" class="nav-link">
+                    <span class="nav-link-text">Projekt</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#download" class="nav-link">
+                    <span class="nav-link-text">Pobierz</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#team" class="nav-link">
+                    <span class="nav-link-text">Ekipa</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#aktorzy" class="nav-link">
+                    <span class="nav-link-text">Aktorzy</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#faq" class="nav-link">
+                    <span class="nav-link-text">FAQ</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#media" class="nav-link">
+                    <span class="nav-link-text">Media</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#partnerzy" class="nav-link">
+                    <span class="nav-link-text">Partnerzy</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#patronat" class="nav-link">
+                    <span class="nav-link-text">Patronat</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="#contact" class="nav-link">
+                    <span class="nav-link-text">Kontakt</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="logo-wrapper animate-on-load">
+                <img src="assets/logo.png" alt="Ślonski Gothic" class="logo">
+            </div>
+
+            <p class="hero-subtitle animate-on-load delay-1">
+                <span class="subtitle-decoration">—</span>
+                Pełne tłumaczenie i dubbing gry Gothic w języku śląskim
+                <span class="subtitle-decoration">—</span>
+            </p>
+
+            <div class="progress-section animate-on-load delay-2">
+                <div class="progress-label">
+                    <span class="label-rune">◆</span>
+                    POSTĘP PRAC
+                    <span class="label-rune">◆</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" data-progress="98"></div>
+                    <span class="progress-text">98%</span>
+                </div>
+                <div class="progress-status">Niemal ukończone</div>
+            </div>
+
+            <a href="#about" class="cta-button animate-on-load delay-3">
+                <span class="btn-decoration btn-decoration-left">⟨</span>
+                <span class="btn-text">Dowiedz się więcej</span>
+                <span class="btn-decoration btn-decoration-right">⟩</span>
+            </a>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Przewiń</span>
+            <span class="scroll-arrow">↓</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="section-frame">
+            <h2 class="section-title">O Projekcie</h2>
+            <div class="ornament"></div>
+
+            <div class="content-columns">
+                <div class="content-block">
+                    <h3>Czym jest Ślonski Gothic?</h3>
+                    <p>Ślonski Gothic to unikalna modyfikacja kultowej gry Gothic, oferująca kompletne tłumaczenie oraz pełen dubbing w języku śląskim. To nie tylko tłumaczenie - to kulturowa adaptacja świata Gothica do śląskich realiów.</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Autentyczny dubbing</h3>
+                    <p>W projekcie biorą udział zarówno profesjonalni aktorzy teatralni, jak i amatorzy - wszyscy połączeni miłością do śląskiej gwary. Każdy aktor używa tej wersji języka, którą posługuje się na co dzień, co nadaje dubbingowi autentyczny i naturalny charakter.</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Kiedy premiera?</h3>
+                    <p>Planowana premiera to przełom 2025/2026 roku. Śledź nasze media społecznościowe, aby być na bieżąco z postępami prac!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section download">
+        <div class="section-frame">
+            <h2 class="section-title">Pobierz</h2>
+            <div class="ornament"></div>
+
+            <p class="download-info">Modyfikacja będzie dostępna do pobrania po premierze. Wybierz preferowaną platformę:</p>
+
+            <div class="download-buttons">
+                <a href="#" class="download-btn download-moddb disabled">
+                    <img src="assets/platforms/moddb.webp" alt="ModDB" class="platform-logo">
+                    <span class="download-status">Wkrótce</span>
+                </a>
+                <a href="#" class="download-btn download-steam disabled">
+                    <img src="assets/platforms/steam.png" alt="Steam" class="platform-logo">
+                    <span class="download-status">Wkrótce</span>
+                </a>
+                <a href="#" class="download-btn download-gog disabled">
+                    <img src="assets/platforms/gog.webp" alt="GOG" class="platform-logo">
+                    <span class="download-status">Wkrótce</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="section-frame">
+            <h2 class="section-title">Ekipa</h2>
+            <div class="ornament"></div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-frame">
+                        <img src="assets/team/tworca_mateusz_tomanek.jpg" alt="Mateusz Tomanek" class="member-photo">
+                    </div>
+                    <h4 class="member-name">Mateusz Tomanek</h4>
+                    <p class="member-role">Programowanie</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-frame">
+                        <img src="assets/team/tworca_karol_chwastek.jpg" alt="Karol Chwastek" class="member-photo">
+                    </div>
+                    <h4 class="member-name">Karol Chwastek</h4>
+                    <p class="member-role">Polityka</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-frame">
+                        <img src="assets/team/tworca_michal_mikolajczyk.jpg" alt="Michał Mikołajczyk" class="member-photo">
+                    </div>
+                    <h4 class="member-name">Michał Mikołajczyk</h4>
+                    <p class="member-role">Dźwięk</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actors Section -->
+    <section id="aktorzy" class="section actors">
+        <div class="section-frame">
+            <h2 class="section-title">Głosu użyczyli</h2>
+            <div class="ornament"></div>
+
+            <div class="actors-grid">
+                <div class="actor">
+                    <div class="actor-frame">
+                        <img src="assets/actors/mneinert.webp" alt="Mirosław Neinert" class="actor-photo">
+                    </div>
+                    <h4 class="actor-name">Mirosław Neinert</h4>
+                    <p class="actor-role">Dyrektor teatru Korez</p>
+                </div>
+                <div class="actor">
+                    <div class="actor-frame">
+                        <img src="assets/actors/rtalarczyk.jpg" alt="Andrzej Ogłoza" class="actor-photo">
+                    </div>
+                    <h4 class="actor-name">Robert Talarczyck</h4>
+                    <p class="actor-role">Dyrektor teatru Śląskiego</p>
+                </div>
+                <div class="actor">
+                    <div class="actor-frame">
+                        <img src="assets/actors/andrzej_ogloza.jpg" alt="Andrzej Ogłoza" class="actor-photo">
+                    </div>
+                    <h4 class="actor-name">Andrzej Ogłoza</h4>
+                    <p class="actor-role">Aktor teatru Śląskiego</p>
+                </div>
+
+                <div class="actor">
+                    <div class="actor-frame">
+                        <img src="assets/actors/pawel_kempa.png" alt="Paweł Kempa" class="actor-photo">
+                    </div>
+                    <h4 class="actor-name">Paweł Kempa</h4>
+                    <p class="actor-role">Aktor teatru Śląskiego</p>
+                </div>
+
+                <div class="actor">
+                    <div class="actor-frame">
+                        <img src="assets/actors/dariusz_niebudek.png" alt="Dariusz Niebudek" class="actor-photo">
+                    </div>
+                    <h4 class="actor-name">Dariusz Niebudek</h4>
+                    <p class="actor-role">Aktor teatru Śląskiego</p>
+                </div>
+
+                <div class="actor">
+                    <div class="actor-frame">
+                        <img src="assets/actors/piotr_bulka.png" alt="Piotr Bułka" class="actor-photo">
+                    </div>
+                    <h4 class="actor-name">Piotr Bułka</h4>
+                    <p class="actor-role">Aktor teatru Śląskiego</p>
+                </div>
+
+                <div class="actor">
+                    <div class="actor-frame">
+                        <img src="assets/actors/marcin_gawel.png" alt="Marcin Gaweł" class="actor-photo">
+                    </div>
+                    <h4 class="actor-name">Marcin Gaweł</h4>
+                    <p class="actor-role">Aktor teatru Śląskiego</p>
+                </div>
+
+                <div class="actor">
+                    <div class="actor-frame">
+                        <img src="assets/actors/bartek_blaszczynski.png" alt="Bartek Błaszczyński" class="actor-photo">
+                    </div>
+                    <h4 class="actor-name">Bartek Błaszczyński</h4>
+                    <p class="actor-role">Aktor teatru Śląskiego</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+        <div class="section-frame">
+            <h2 class="section-title">Często Zadawane Pytania</h2>
+            <div class="ornament"></div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy modyfikacja zmienia coś w grze?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Oprócz pełnego dubbingu, mod naprawia wybrane błędy, dodaje nowych NPC oraz kilka zadań pobocznych. Większość zmian można pominąć, zachowując oryginalną rozgrywkę.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy modyfikacja będzie darmowa?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Tak! Ślonski Gothic będzie całkowicie darmowy dla wszystkich posiadaczy oryginalnej gry Gothic.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy potrzebuję oryginalnej gry?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Tak, do uruchomienia modyfikacji wymagana jest oryginalna gra Gothic.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Na jakiej wersji gry działa mod?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Modyfikacja będzie kompatybilna z oryginalnym Gothic 1 oraz wersjami dostępnymi na platformach cyfrowych.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak mogę wesprzeć projekt?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Najlepszym wsparciem jest śledzenie i udostępnianie naszych mediów społecznościowych. Możesz też dołączyć do naszej społeczności na <a href="https://discord.gg/BFUJcVbu" target="_blank" rel="noopener">Discordzie</a>!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="section media">
+        <div class="section-frame">
+            <h2 class="section-title">Multimedia</h2>
+            <div class="ornament"></div>
+
+            <div class="video-grid">
+                <div class="video-item">
+                    <iframe src="https://www.youtube-nocookie.com/embed/1usycqp1e0c?rel=0" title="Ślonski Gothic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube-nocookie.com/embed/yk0gfTPKVi4?rel=0" title="Ślonski Gothic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube-nocookie.com/embed/dVSO36QlK0g?rel=0" title="Ślonski Gothic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube-nocookie.com/embed/1zbWNR6gfHA?rel=0" title="Ślonski Gothic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube-nocookie.com/embed/vtDXa5g1GSw?rel=0" title="Ślonski Gothic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube-nocookie.com/embed/1NTPGWdKShY?rel=0" title="Ślonski Gothic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partnerzy" class="section partners">
+        <div class="section-frame">
+            <h2 class="section-title">Partnerzy projektu</h2>
+            <div class="ornament"></div>
+
+            <div class="partners-grid">
+                <div class="partner-item">
+                    <img src="assets/partners/partner_katowice.png" alt="Katowice">
+                </div>
+                <div class="partner-item">
+                    <img src="assets/partners/partner_fundacja_z_pasja.png" alt="Fundacja z Pasją">
+                </div>
+                <div class="partner-item">
+                    <img src="assets/partners/partner_sparta_records.png" alt="Sparta Records">
+                </div>
+                <div class="partner-item">
+                    <img src="assets/partners/partner_intebuco.png" alt="Intebuco">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patronat Section -->
+    <section id="patronat" class="section patronat">
+        <div class="section-frame">
+            <h2 class="section-title">Patronat medialny</h2>
+            <div class="ornament"></div>
+
+            <div class="patronat-grid">
+                <a href="https://gothic.org.pl/" target="_blank" rel="noopener" class="patronat-item">
+                    <img src="assets/patronat_gothicup.png" alt="Gothic.org.pl">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="section-frame">
+            <h2 class="section-title">Kontakt</h2>
+            <div class="ornament"></div>
+
+            <div class="social-links">
+                <a href="https://discord.gg/BFUJcVbu" target="_blank" rel="noopener" class="social-link discord">
+                    <span class="social-icon">⬡</span>
+                    <span class="social-name">Discord</span>
+                </a>
+                <a href="https://facebook.com/slaskigothic" target="_blank" rel="noopener" class="social-link facebook">
+                    <span class="social-icon">f</span>
+                    <span class="social-name">Facebook</span>
+                </a>
+                <a href="https://youtube.com/@slaskigothic" target="_blank" rel="noopener" class="social-link youtube">
+                    <span class="social-icon">▶</span>
+                    <span class="social-name">YouTube</span>
+                </a>
+                <a href="https://tiktok.com/@slaskigothic" target="_blank" rel="noopener" class="social-link tiktok">
+                    <span class="social-icon">♪</span>
+                    <span class="social-name">TikTok</span>
+                </a>
+            </div>
+
+            <div class="contact-email">
+                <p>Kontakt e-mail: <a href="mailto:kontakt@slaskigothic.pl">kontakt@slaskigothic.pl</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-decoration">
+            <span class="footer-rune">ᛟ</span>
+            <div class="footer-line"></div>
+            <span class="footer-diamond">◆</span>
+            <div class="footer-line"></div>
+            <span class="footer-rune">ᛟ</span>
+        </div>
+        <div class="footer-frame">
+            <p class="footer-copyright">&copy; 2024-2025 Ślonski Gothic</p>
+            <p class="footer-tagline">Wszelkie prawa zastrzeżone</p>
+            <p class="disclaimer">Gothic jest zarejestrowanym znakiem towarowym Piranha Bytes / THQ Nordic.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
