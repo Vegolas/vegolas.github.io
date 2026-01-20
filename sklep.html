@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep - Ślonski Gothic</title>
+    <meta name="description" content="Oficjalny sklep Ślonski Gothic - gadżety, koszulki i pamiątki dla fanów śląskiej gwary.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particle canvas for atmospheric effects -->
+    <canvas id="particles"></canvas>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-chain nav-chain-left">
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+        </div>
+        <div class="nav-chain nav-chain-right">
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+            <span class="chain-link"></span>
+        </div>
+        <div class="nav-glow"></div>
+        <div class="nav-frame">
+            <div class="nav-corner nav-corner-tl">
+                <span class="corner-rune">ᛟ</span>
+            </div>
+            <div class="nav-corner nav-corner-tr">
+                <span class="corner-rune">ᚱ</span>
+            </div>
+            <div class="nav-corner nav-corner-bl">
+                <span class="corner-rune">ᚹ</span>
+            </div>
+            <div class="nav-corner nav-corner-br">
+                <span class="corner-rune">ᛉ</span>
+            </div>
+            <div class="nav-border-ornament nav-border-top"></div>
+            <div class="nav-border-ornament nav-border-bottom"></div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <span class="nav-link-text">Start</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="index.html#about" class="nav-link">
+                    <span class="nav-link-text">Projekt</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+                <a href="index.html#download" class="nav-link">
+                    <span class="nav-link-text">Pobierz</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+
+                <!-- Zespół Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">
+                        <span class="nav-link-text">Zespół</span>
+                        <span class="dropdown-arrow">▼</span>
+                        <span class="nav-link-glow"></span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#team" class="nav-dropdown-item">Ekipa</a>
+                        <a href="index.html#aktorzy" class="nav-dropdown-item">Aktorzy</a>
+                    </div>
+                </div>
+                <span class="nav-separator">◆</span>
+
+                <!-- Więcej Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">
+                        <span class="nav-link-text">Więcej</span>
+                        <span class="dropdown-arrow">▼</span>
+                        <span class="nav-link-glow"></span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="index.html#faq" class="nav-dropdown-item">FAQ</a>
+                        <a href="index.html#media" class="nav-dropdown-item">Media</a>
+                        <div class="nav-dropdown-divider"></div>
+                        <a href="index.html#partnerzy" class="nav-dropdown-item">Partnerzy</a>
+                        <a href="index.html#patronat" class="nav-dropdown-item">Patronat</a>
+                    </div>
+                </div>
+                <span class="nav-separator">◆</span>
+
+                <a href="index.html#contact" class="nav-link">
+                    <span class="nav-link-text">Kontakt</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+
+                <a href="poradniki.html" class="nav-link">
+                    <span class="nav-link-text">Poradniki</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+                <span class="nav-separator">◆</span>
+
+                <a href="sklep.html" class="nav-link active">
+                    <span class="nav-link-text">Sklep</span>
+                    <span class="nav-link-glow"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <a href="index.html" class="header-logo-link">
+                <img src="assets/logo.png" alt="Ślonski Gothic" class="header-logo">
+            </a>
+            <h1 class="page-title">Sklep</h1>
+            <p class="page-subtitle">Oficjalne gadżety Ślonskiego Gothica</p>
+        </div>
+    </header>
+
+    <!-- Merch/Shop Section -->
+    <section id="sklep" class="section sklep">
+        <div class="section-frame">
+            <h2 class="section-title">Nasze produkty</h2>
+            <div class="ornament"></div>
+
+            <p class="shop-intro">Wspieraj projekt i pokaż swoją miłość do śląskiej gwary! Oficjalne gadżety Ślonskiego Gothica.</p>
+
+            <div class="merch-grid">
+                <div class="merch-item">
+                    <div class="merch-image-frame">
+                        <div class="merch-placeholder">
+                            <span class="merch-icon">👕</span>
+                        </div>
+                    </div>
+                    <h4 class="merch-name">Koszulka "Witej w Górniczej Dolinie"</h4>
+                    <p class="merch-description">Oficjalna koszulka z kultowym cytatem w śląskiej wersji</p>
+                    <span class="merch-status">Wkrótce dostępna</span>
+                </div>
+
+                <div class="merch-item">
+                    <div class="merch-image-frame">
+                        <div class="merch-placeholder">
+                            <span class="merch-icon">☕</span>
+                        </div>
+                    </div>
+                    <h4 class="merch-name">Kubek z logo</h4>
+                    <p class="merch-description">Ceramiczny kubek z logo Ślonskiego Gothica</p>
+                    <span class="merch-status">Wkrótce dostępny</span>
+                </div>
+
+                <div class="merch-item">
+                    <div class="merch-image-frame">
+                        <div class="merch-placeholder">
+                            <span class="merch-icon">🎨</span>
+                        </div>
+                    </div>
+                    <h4 class="merch-name">Plakat A2</h4>
+                    <p class="merch-description">Ekskluzywny plakat z grafiką promującą projekt</p>
+                    <span class="merch-status">Wkrótce dostępny</span>
+                </div>
+
+                <div class="merch-item">
+                    <div class="merch-image-frame">
+                        <div class="merch-placeholder">
+                            <span class="merch-icon">📀</span>
+                        </div>
+                    </div>
+                    <h4 class="merch-name">Edycja kolekcjonerska</h4>
+                    <p class="merch-description">Fizyczne wydanie z dodatkami dla kolekcjonerów</p>
+                    <span class="merch-status">Wkrótce dostępna</span>
+                </div>
+            </div>
+
+            <div class="shop-note">
+                <p>Sklep zostanie uruchomiony wraz z premierą modyfikacji. Śledź nasze media społecznościowe!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="section contact-cta">
+        <div class="section-frame">
+            <h2 class="section-title">Masz pytania?</h2>
+            <div class="ornament"></div>
+            <p class="cta-text">Skontaktuj się z nami przez media społecznościowe lub e-mail.</p>
+            <a href="index.html#contact" class="cta-button">
+                <span class="btn-decoration btn-decoration-left">⟨</span>
+                <span class="btn-text">Przejdź do kontaktu</span>
+                <span class="btn-decoration btn-decoration-right">⟩</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-decoration">
+            <span class="footer-rune">ᛟ</span>
+            <div class="footer-line"></div>
+            <span class="footer-diamond">◆</span>
+            <div class="footer-line"></div>
+            <span class="footer-rune">ᛟ</span>
+        </div>
+        <div class="footer-frame">
+            <p class="footer-copyright">&copy; 2024-2025 Ślonski Gothic</p>
+            <p class="footer-tagline">Wszelkie prawa zastrzeżone</p>
+            <p class="disclaimer">Gothic jest zarejestrowanym znakiem towarowym Piranha Bytes / THQ Nordic.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

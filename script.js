@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initNavHighlight();
     initScrollReveal();
+    initDropdowns();
 });
 
 /* =====================================================
@@ -330,6 +331,86 @@ function initCustomCursor() {
     });
 }
 */
+
+/* =====================================================
+   DROPDOWN MENUS
+   ===================================================== */
+function initDropdowns() {
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        const menu = dropdown.querySelector('.nav-dropdown-menu');
+
+        // Toggle dropdown on click
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = dropdown.classList.contains('active');
+
+            // Close all other dropdowns
+            dropdowns.forEach(other => {
+                if (other !== dropdown) {
+                    other.classList.remove('active');
+                }
+            });
+
+            // Toggle current dropdown
+            dropdown.classList.toggle('active', !isActive);
+        });
+
+        // Close dropdown when clicking on a dropdown item
+        const items = dropdown.querySelectorAll('.nav-dropdown-item');
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                dropdown.classList.remove('active');
+            });
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+
+    // Close dropdowns on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+
+    // Optional: Open on hover for desktop (with delay)
+    if (window.innerWidth > 768) {
+        dropdowns.forEach(dropdown => {
+            let hoverTimeout;
+
+            dropdown.addEventListener('mouseenter', () => {
+                clearTimeout(hoverTimeout);
+                hoverTimeout = setTimeout(() => {
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown) {
+                            other.classList.remove('active');
+                        }
+                    });
+                    dropdown.classList.add('active');
+                }, 150);
+            });
+
+            dropdown.addEventListener('mouseleave', () => {
+                clearTimeout(hoverTimeout);
+                hoverTimeout = setTimeout(() => {
+                    dropdown.classList.remove('active');
+                }, 300);
+            });
+        });
+    }
+}
 
 /* =====================================================
    OPTIONAL: Parallax effect on scroll
