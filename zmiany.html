@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome for RPG/gaming icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Particle canvas for atmospheric effects -->
     <canvas id="particles"></canvas>
@@ -69,7 +75,8 @@
             <span class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
             <div class="warning-content">
                 <h3>Uwaga - spoilery!</h3>
-                <p>Poniższa lista zawiera szczegóły dotyczące nowej zawartości. Jeśli wolisz odkryć wszystko samodzielnie, wróć do gry i ciesz się niespodziankami!</p>
+                <p>Poniższa lista zawiera szczegóły dotyczące nowej zawartości. Jeśli wolisz odkryć wszystko
+                    samodzielnie, wróć do gry i ciesz się niespodziankami!</p>
             </div>
         </div>
     </section>
@@ -78,10 +85,14 @@
     <section class="split-section split-section--image-left" id="change-uriziel">
         <div class="split-section__image-side">
             <!-- Multiple image layers for hover effect -->
-            <div class="split-section__image-bg split-section__image-bg--default active" style="background-image: url('assets/changes/changes_01.png');"></div>
-            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="onehand" style="background-image: url('assets/changes/uriziel_onehand.png');"></div>
-            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="bow" style="background-image: url('assets/changes/uriziel_bow.png');"></div>
-            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="crossbow" style="background-image: url('assets/changes/uriziel_crossbow.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--default active"
+                style="background-image: url('assets/changes/changes_01.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="onehand"
+                style="background-image: url('assets/changes/uriziel_onehand.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="bow"
+                style="background-image: url('assets/changes/uriziel_bow.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="crossbow"
+                style="background-image: url('assets/changes/uriziel_crossbow.png');"></div>
             <div class="split-section__image-overlay"></div>
         </div>
 
@@ -96,26 +107,190 @@
                 </div>
 
                 <div class="split-section__text">
-                    <p>Legendarny miecz Uriziel otrzymał nowe możliwości przekucia. Teraz możesz zlecić Stone, kowalowi koloni, przekształcenie tej potężnej broni w różne formy walki.</p>
+                    <p>Legendarny miecz Uriziel otrzymał nowe możliwości przekucia. Teraz możesz zlecić Stone, kowalowi
+                        koloni, przekształcenie tej potężnej broni w różne formy walki.</p>
 
                     <ul class="split-section__feature-list">
                         <li class="feature-item" data-image="onehand">
                             <span class="feature-icon"><i class="fa-solid fa-khanda"></i></span>
-                            <span class="feature-text">Przekucie na miecz jednoręczny - zwiększona prędkość ataku i możliwość używania tarczy</span>
+                            <span class="feature-text">Przekucie na miecz jednoręczny - zwiększona prędkość ataku i
+                                możliwość używania tarczy</span>
                         </li>
                         <li class="feature-item" data-image="bow">
                             <span class="feature-icon"><i class="fa-solid fa-bullseye"></i></span>
-                            <span class="feature-text">Przerobienie na łuk - moc Urziela w każdej wypuszczonej strzale</span>
+                            <span class="feature-text">Przerobienie na łuk - moc Urziela w każdej wypuszczonej
+                                strzale</span>
                         </li>
                         <li class="feature-item" data-image="crossbow">
                             <span class="feature-icon"><i class="fa-solid fa-burst"></i></span>
-                            <span class="feature-text">Konwersja na kuszę - precyzyjny dystansowy oręż z magicznymi właściwościami</span>
+                            <span class="feature-text">Konwersja na kuszę - precyzyjny dystansowy oręż z magicznymi
+                                właściwościami</span>
                         </li>
                     </ul>
 
                     <div class="split-section__note">
                         <span class="note-icon"><i class="fa-solid fa-diamond"></i></span>
-                        <p>Znajdź Stone w obozie Starej Kopalni, aby omówić możliwości przekształcenia. Każda transformacja zachowuje magiczne właściwości oryginału.</p>
+                        <p>Znajdź Stone w obozie Starej Kopalni, aby omówić możliwości przekształcenia. Każda
+                            transformacja zachowuje magiczne właściwości oryginału.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section 2: Buch Szkolorza -->
+    <section class="split-section split-section--image-right split-section--skew-reverse" id="change-books">
+        <div class="split-section__image-side">
+            <!-- Multiple image layers for hover effect -->
+            <div class="split-section__image-bg split-section__image-bg--default active"
+                style="background-image: url('assets/changes/changes_02.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="collection"
+                style="background-image: url('assets/changes/changes_02_02.png');"></div>
+            <div class="split-section__image-overlay"></div>
+        </div>
+
+        <div class="split-section__content-side">
+            <div class="split-section__diagonal-edge"></div>
+            <div class="split-section__content-frame">
+                <div class="split-section__marble-overlay"></div>
+
+                <div class="split-section__header">
+                    <h3 class="split-section__title">Buch Szkolorza</h3>
+                    <div class="split-section__ornament"></div>
+                </div>
+
+                <div class="split-section__text">
+                    <p>W świecie rozsianych jest 10 tajemniczych książek zwanych "Buch Szkolorza". Te pradawne tomisko
+                        zawierają mądrość poprzednich pokoleń i potężną wiedzę magiczną.</p>
+
+                    <ul class="split-section__feature-list">
+                        <li class="feature-item" data-image="collection">
+                            <span class="feature-icon"><i class="fa-solid fa-book"></i></span>
+                            <span class="feature-text"><strong>10 unikalnych książek</strong> - każda ukryta w innej
+                                lokacji świata gry</span>
+                        </li>
+                        <li class="feature-item" data-image="collection">
+                            <span class="feature-icon"><i class="fa-solid fa-star"></i></span>
+                            <span class="feature-text"><strong>Nagrody za czytanie</strong> - każda książka dodaje
+                                punkty doświadczenia</span>
+                        </li>
+                        <li class="feature-item" data-image="collection">
+                            <span class="feature-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span class="feature-text"><strong>Punkty nauki</strong> - zdobywaj dodatkowe punkty do
+                                wydania u nauczycieli</span>
+                        </li>
+                    </ul>
+
+                    <div class="split-section__note">
+                        <span class="note-icon"><i class="fa-solid fa-diamond"></i></span>
+                        <p>Eksploruj każdy zakamarek świata, aby odnaleźć wszystkie egzemplarze. Niektóre są dobrze
+                            ukryte!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section 3: Bieda Szyby -->
+    <section class="split-section split-section--image-left" id="change-bieda-szyby">
+        <div class="split-section__image-side">
+            <!-- Multiple image layers for hover effect -->
+            <div class="split-section__image-bg split-section__image-bg--default active"
+                style="background-image: url('assets/changes/changes_03.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="variant1"
+                style="background-image: url('assets/changes/changes_03_01.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="variant2"
+                style="background-image: url('assets/changes/changes_03_02.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="variant3"
+                style="background-image: url('assets/changes/changes_03_03.png');"></div>
+            <div class="split-section__image-overlay"></div>
+        </div>
+
+        <div class="split-section__content-side">
+            <div class="split-section__diagonal-edge"></div>
+            <div class="split-section__content-frame">
+                <div class="split-section__marble-overlay"></div>
+
+                <div class="split-section__header">
+                    <h3 class="split-section__title">Bieda Szyby</h3>
+                    <div class="split-section__ornament"></div>
+                </div>
+
+                <div class="split-section__text">
+                    <p>Opis główny sekcji - do uzupełnienia.</p>
+
+                    <ul class="split-section__feature-list">
+                        <li class="feature-item" data-image="variant1">
+                            <span class="feature-icon"><i class="fa-solid fa-gem"></i></span>
+                            <span class="feature-text"><strong>Segment 1</strong> - opis do uzupełnienia</span>
+                        </li>
+                        <li class="feature-item" data-image="variant2">
+                            <span class="feature-icon"><i class="fa-solid fa-sparkles"></i></span>
+                            <span class="feature-text"><strong>Segment 2</strong> - opis do uzupełnienia</span>
+                        </li>
+                        <li class="feature-item" data-image="variant3">
+                            <span class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            <span class="feature-text"><strong>Segment 3</strong> - opis do uzupełnienia</span>
+                        </li>
+                    </ul>
+
+                    <div class="split-section__note">
+                        <span class="note-icon"><i class="fa-solid fa-diamond"></i></span>
+                        <p>Notatka dodatkowa - do uzupełnienia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section 4: Naprawione Błędy -->
+    <section class="split-section split-section--image-right split-section--skew-reverse" id="change-bugfixes">
+        <div class="split-section__image-side">
+            <!-- Multiple image layers for hover effect -->
+            <div class="split-section__image-bg split-section__image-bg--default active"
+                style="background-image: url('assets/changes/changes_04.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="variant1"
+                style="background-image: url('assets/changes/changes_04_01.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="variant2"
+                style="background-image: url('assets/changes/changes_04_02.png');"></div>
+            <div class="split-section__image-overlay"></div>
+        </div>
+
+        <div class="split-section__content-side">
+            <div class="split-section__diagonal-edge"></div>
+            <div class="split-section__content-frame">
+                <div class="split-section__marble-overlay"></div>
+
+                <div class="split-section__header">
+                    <h3 class="split-section__title">Naprawione błędy</h3>
+                    <div class="split-section__ornament"></div>
+                </div>
+
+                <div class="split-section__text">
+                    <p>Parę błędów oryginału, które udało nam się poprawić.</p>
+
+                    <ul class="split-section__feature-list">
+                        <li class="feature-item" data-image="variant1">
+                            <span class="feature-icon"><i class="fa-solid fa-wrench"></i></span>
+                            <span class="feature-text"><strong>Darmowe czary</strong> - powinno być teraz znacząco
+                                ciężej wyczarować darmową kulę ognia przy użyciu serca golema. Dotyczy to też innych
+                                czarów wymagających inwestycji many.</span>
+                        </li>
+                        <li class="feature-item" data-image="variant2">
+                            <span class="feature-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                            <span class="feature-text"><strong>Podwójne doświadczenie</strong> - pokonanie NPC w walce a
+                                następne zabicie go z broni dystansowej nie dostarczy dodatkowych punktów doświadczenia.
+                                Zwyrole.</span>
+                        </li>
+                        <li class="feature-item" data-image="variant1">
+                            <span class="feature-icon"><i class="fa-solid fa-hammer"></i></span>
+                            <span class="feature-text"><strong>Poprawka 3</strong> - opis do uzupełnienia</span>
+                        </li>
+                    </ul>
+
+                    <div class="split-section__note">
+                        <span class="note-icon"><i class="fa-solid fa-diamond"></i></span>
+                        <p>Tak piszemy, ale na pewno w pierwszym dniu znajdzie się ktoś kto to obejdzie. ;)</p>
                     </div>
                 </div>
             </div>
@@ -154,4 +329,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
