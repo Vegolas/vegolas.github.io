@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavHighlight();
     initScrollReveal();
     initDropdowns();
+    initSplitSectionHover();
 });
 
 /* =====================================================
@@ -50,6 +51,12 @@ function initScrollReveal() {
     }, observerOptions);
 
     sectionFrames.forEach(frame => {
+        observer.observe(frame);
+    });
+
+    // Add split section content frames to scroll reveal
+    const splitContentFrames = document.querySelectorAll('.split-section__content-frame');
+    splitContentFrames.forEach(frame => {
         observer.observe(frame);
     });
 }
@@ -410,6 +417,56 @@ function initDropdowns() {
             });
         });
     }
+}
+
+/* =====================================================
+   SPLIT SECTION IMAGE HOVER - Dynamic image switching
+   ===================================================== */
+function initSplitSectionHover() {
+    // Find all split sections with hover functionality
+    const splitSections = document.querySelectorAll('.split-section');
+
+    splitSections.forEach(section => {
+        const featureItems = section.querySelectorAll('.feature-item[data-image]');
+        const imageContainer = section.querySelector('.split-section__image-side');
+
+        if (!featureItems.length || !imageContainer) return;
+
+        const defaultImage = imageContainer.querySelector('.split-section__image-bg--default');
+        const alternateImages = imageContainer.querySelectorAll('.split-section__image-bg--alternate');
+
+        featureItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const targetVariant = item.getAttribute('data-image');
+
+                // Hide default image
+                if (defaultImage) {
+                    defaultImage.classList.remove('active');
+                }
+
+                // Show matching alternate image
+                alternateImages.forEach(img => {
+                    if (img.getAttribute('data-variant') === targetVariant) {
+                        img.classList.add('active');
+                    } else {
+                        img.classList.remove('active');
+                    }
+                });
+            });
+
+            item.addEventListener('mouseleave', () => {
+                // Hide all alternate images
+                alternateImages.forEach(img => {
+                    img.classList.remove('active');
+                });
+
+                // Show default image
+                if (defaultImage) {
+                    defaultImage.classList.add('active');
+                }
+            });
+        });
+    });
 }
 
 /* =====================================================

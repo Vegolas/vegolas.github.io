@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome for RPG/gaming icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -63,7 +66,7 @@
     <!-- Spoiler Warning -->
     <section class="section spoiler-warning">
         <div class="warning-box">
-            <span class="warning-icon">⚠</span>
+            <span class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
             <div class="warning-content">
                 <h3>Uwaga - spoilery!</h3>
                 <p>Poniższa lista zawiera szczegóły dotyczące nowej zawartości. Jeśli wolisz odkryć wszystko samodzielnie, wróć do gry i ciesz się niespodziankami!</p>
@@ -71,46 +74,49 @@
         </div>
     </section>
 
-    <!-- Changes Section -->
-    <section id="zmiany" class="section zmiany">
-        <div class="section-frame">
-            <h2 class="section-title">Pełna lista zmian</h2>
-            <div class="ornament"></div>
+    <!-- Split Section 1: Uriziel Modifications -->
+    <section class="split-section split-section--image-left" id="change-uriziel">
+        <div class="split-section__image-side">
+            <!-- Multiple image layers for hover effect -->
+            <div class="split-section__image-bg split-section__image-bg--default active" style="background-image: url('assets/changes/changes_01.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="onehand" style="background-image: url('assets/changes/uriziel_onehand.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="bow" style="background-image: url('assets/changes/uriziel_bow.png');"></div>
+            <div class="split-section__image-bg split-section__image-bg--alternate" data-variant="crossbow" style="background-image: url('assets/changes/uriziel_crossbow.png');"></div>
+            <div class="split-section__image-overlay"></div>
+        </div>
 
-            <div class="changelog">
-                <div class="changelog-version">
-                    <div class="version-header">
-                        <span class="version-number">v1.0</span>
-                        <span class="version-date">Premiera</span>
-                        <span class="version-badge">Wkrótce</span>
-                    </div>
-                    <div class="version-content">
-                        <h4>Główne funkcje</h4>
-                        <ul class="change-list">
-                            <li class="change-item change-feature">Pełny dubbing wszystkich dialogów w języku śląskim</li>
-                            <li class="change-item change-feature">Przetłumaczone napisy i interfejs użytkownika</li>
-                            <li class="change-item change-feature">Nowe dialogi i rozbudowane rozmowy z NPC</li>
-                            <li class="change-item change-feature">Autentyczna śląska gwara w różnych wariantach regionalnych</li>
-                        </ul>
+        <div class="split-section__content-side">
+            <div class="split-section__diagonal-edge"></div>
+            <div class="split-section__content-frame">
+                <div class="split-section__marble-overlay"></div>
 
-                        <h4>Poprawki błędów</h4>
-                        <ul class="change-list">
-                            <li class="change-item change-fix">Naprawione klasyczne błędy z oryginalnej gry</li>
-                            <li class="change-item change-fix">Poprawiona stabilność gry</li>
-                            <li class="change-item change-fix">Ulepszenia kompatybilności z nowoczesnymi systemami</li>
-                        </ul>
-
-                        <h4>Dodatkowa zawartość</h4>
-                        <ul class="change-list">
-                            <li class="change-item change-content">Nowi NPC z unikalnymi historiami</li>
-                            <li class="change-item change-content">Dodatkowe zadania poboczne</li>
-                            <li class="change-item change-content">Śląskie odniesienia kulturowe i żarty</li>
-                        </ul>
-                    </div>
+                <div class="split-section__header">
+                    <h3 class="split-section__title">Uriziel - Nowe możliwości</h3>
+                    <div class="split-section__ornament"></div>
                 </div>
 
-                <div class="changelog-note">
-                    <p>Pełna lista zmian zostanie opublikowana wraz z premierą modyfikacji.</p>
+                <div class="split-section__text">
+                    <p>Legendarny miecz Uriziel otrzymał nowe możliwości przekucia. Teraz możesz zlecić Stone, kowalowi koloni, przekształcenie tej potężnej broni w różne formy walki.</p>
+
+                    <ul class="split-section__feature-list">
+                        <li class="feature-item" data-image="onehand">
+                            <span class="feature-icon"><i class="fa-solid fa-khanda"></i></span>
+                            <span class="feature-text">Przekucie na miecz jednoręczny - zwiększona prędkość ataku i możliwość używania tarczy</span>
+                        </li>
+                        <li class="feature-item" data-image="bow">
+                            <span class="feature-icon"><i class="fa-solid fa-bullseye"></i></span>
+                            <span class="feature-text">Przerobienie na łuk - moc Urziela w każdej wypuszczonej strzale</span>
+                        </li>
+                        <li class="feature-item" data-image="crossbow">
+                            <span class="feature-icon"><i class="fa-solid fa-burst"></i></span>
+                            <span class="feature-text">Konwersja na kuszę - precyzyjny dystansowy oręż z magicznymi właściwościami</span>
+                        </li>
+                    </ul>
+
+                    <div class="split-section__note">
+                        <span class="note-icon"><i class="fa-solid fa-diamond"></i></span>
+                        <p>Znajdź Stone w obozie Starej Kopalni, aby omówić możliwości przekształcenia. Każda transformacja zachowuje magiczne właściwości oryginału.</p>
+                    </div>
                 </div>
             </div>
         </div>
