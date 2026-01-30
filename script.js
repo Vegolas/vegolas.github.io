@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initDropdowns();
     initSplitSectionHover();
+    initCopyrightYear();
 });
 
 /* =====================================================
@@ -484,3 +485,13 @@ function initParallax() {
 
 // Initialize parallax
 initParallax();
+
+/* =====================================================
+   DYNAMIC COPYRIGHT YEAR
+   ===================================================== */
+function initCopyrightYear() {
+    const yearSpan = document.getElementById('copyright-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+}
